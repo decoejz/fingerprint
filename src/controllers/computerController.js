@@ -1,14 +1,11 @@
-const Computer = require("../models/computer");
+const Computer = require('../models/computer');
 
-class ComputerController{
-    async store(req, res) {
-        const pc = await Computer.create({
-            ipv4: req.body.ipv4,
-            ipv6: req.body.ipv6
-        });
+class ComputerController {
+  async store(req, res) {
+    const pc = await Computer.create({ body: req.body });
 
-        return res.json(pc);
-    }
+    return res.json(pc);
+  }
 }
 
 module.exports = new ComputerController();
