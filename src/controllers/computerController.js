@@ -7,6 +7,11 @@ class ComputerController {
 
     return res.json(pc);
   }
+
+  async show(req, res) {
+    const pc = await Computer.find({});
+    return res.json(pc);
+  }
 }
 
 module.exports = new ComputerController();
