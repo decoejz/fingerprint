@@ -1,11 +1,14 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const Computer = new mongoose.Schema({
-    ipv4:{
-        type: String,
-        required: true
-    },
-    ipv6: String,
-});
+const Computer = new mongoose.Schema(
+  {
+    body: {
+      type: mongoose.Schema.Types.Mixed
+    }
+  },
+  {
+    timestamps: true
+  }
+);
 
-module.exports = mongoose.model("Computer", Computer);
+module.exports = mongoose.model('Computer', Computer);
